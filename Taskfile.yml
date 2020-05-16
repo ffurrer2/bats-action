@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+version: '2'
+
+tasks:
+  default:
+    cmds:
+    - task --list
+    silent: true
+
+  test:
+    desc: Test entrypoint script
+    env:
+      INPUT_MAIN: 'curl git'
+      INPUT_COMMUNITY: 'docker-cli'
+      INPUT_TESTING: 'wget'
+      INPUT_ARGS: '--help'
+    cmds:
+    - docker build --tag ffurrer/bats-action:latest .
+    - docker run -it --rm --env INPUT_MAIN --env INPUT_COMMUNITY --env INPUT_TESTING --env INPUT_ARGS ffurrer/bats-action:latest
+
+  shellcheck:
+    desc: Lint shell scripts
+    cmds:
+    - shellcheck --check-sourced --color=auto --format=tty --enable=all --shell=bash --severity=style entrypoint.sh
+    silent: true
+
+  yamllint:
+    desc: Lint YAML files
+    cmds:
+    - yamllint --format auto --strict .
+    silent: true

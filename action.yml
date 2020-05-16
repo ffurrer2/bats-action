@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+name: 'Bash Automated Testing System'
+author: 'Felix Furrer'
+description: 'TAP-compliant testing framework for Bash.'
+inputs:
+  main:
+    description: 'Packages to install from the Alpine main repository.'
+    required: false
+  community:
+    description: 'Packages to install from the Alpine community repository.'
+    required: false
+  testing:
+    description: 'Packages to install from the Alpine testing repository.'
+    required: false
+  args:
+    description: 'Flags, options and arguments of Bats.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
