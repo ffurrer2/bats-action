@@ -6,9 +6,13 @@ on:
     branches:
     - master
     - feature/**
+    - dependabot/**
     paths:
     - '**.sh'
     - '**/shellcheck.yml'
+  pull_request:
+    branches:
+    - master
 
 jobs:
   shellcheck:
