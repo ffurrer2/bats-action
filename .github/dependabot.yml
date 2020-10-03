@@ -10,5 +10,3 @@ updates:
   - 'ffurrer2'
   open-pull-requests-limit: 42
   rebase-strategy: 'auto'
-  reviewers:
-  - 'ffurrer2'
