@@ -2,7 +2,7 @@
 # Bats Action
 
 [![CI](https://github.com/ffurrer2/bats-action/workflows/CI/badge.svg)](https://github.com/ffurrer2/bats-action/actions?query=workflow%3ACI)
-[![MIT License](https://img.shields.io/github/license/ffurrer2/bats-action)](https://github.com/ffurrer2/bats-action/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/github/license/ffurrer2/bats-action)](https://github.com/ffurrer2/bats-action/blob/main/LICENSE)
 [![GitHub Release](https://img.shields.io/github/v/release/ffurrer2/bats-action?sort=semver)](https://github.com/ffurrer2/bats-action/releases/latest)
 
 This GitHub Action allows you to run your [Bats](https://github.com/bats-core/bats-core) tests in a customizable Docker container based on the [ffurrer/bats](https://hub.docker.com/r/ffurrer/bats) image.
@@ -27,7 +27,7 @@ This GitHub Action allows you to run your [Bats](https://github.com/bats-core/ba
 
 ### Example workflow
 
-On every `push` to the master branch, run all tests in the `test_docker_container.bats` file:
+On every `push` to the main branch, run all tests in the `test_docker_container.bats` file:
 
 ```yaml
 name: Run Bats tests
@@ -35,7 +35,7 @@ name: Run Bats tests
 on:
   push:
     tags:
-      - master
+      - main
 
 jobs:
   test:
